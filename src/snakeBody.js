@@ -25,26 +25,26 @@ export function getBodyImage(segments, index) {
   // the vectors, so later we will apply an extra quarter‑turn in the drawing code.
   const turnRotation = Math.PI / 2; // constant 90° adjustment for every corner image
   if (
-    (dirPrev.x === 0 && dirPrev.y === -1 && dirNext.x === -1 && dirNext.y === 0) ||
-    (dirPrev.x === -1 && dirPrev.y === 0 && dirNext.x === 0 && dirNext.y === -1)
+    (dirPrev.x === -1 && dirPrev.y === 0 && dirNext.x === 0 && dirNext.y === -1) ||
+    (dirPrev.x === 0 && dirPrev.y === 1 && dirNext.x === 1 && dirNext.y === 0)
   ) {
     return { img: images.body.topleft, dirPrev, dirNext, rotation: turnRotation };
   }
   if (
     (dirPrev.x === 0 && dirPrev.y === -1 && dirNext.x === 1 && dirNext.y === 0) ||
-    (dirPrev.x === 1 && dirPrev.y === 0 && dirNext.x === 0 && dirNext.y === -1)
+    (dirPrev.x === -1 && dirPrev.y === 0 && dirNext.x === 0 && dirNext.y === 1)
   ) {
     return { img: images.body.topright, dirPrev, dirNext, rotation: turnRotation };
   }
   if (
     (dirPrev.x === 0 && dirPrev.y === 1 && dirNext.x === -1 && dirNext.y === 0) ||
-    (dirPrev.x === -1 && dirPrev.y === 0 && dirNext.x === 0 && dirNext.y === 1)
+    (dirPrev.x === 1 && dirPrev.y === 0 && dirNext.x === 0 && dirNext.y === -1)
   ) {
     return { img: images.body.bottomleft, dirPrev, dirNext, rotation: turnRotation };
   }
   if (
-    (dirPrev.x === 0 && dirPrev.y === 1 && dirNext.x === 1 && dirNext.y === 0) ||
-    (dirPrev.x === 1 && dirPrev.y === 0 && dirNext.x === 0 && dirNext.y === 1)
+    (dirPrev.x === 1 && dirPrev.y === 0 && dirNext.x === 0 && dirNext.y === 1) ||
+    (dirPrev.x === 0 && dirPrev.y === -1 && dirNext.x === -1 && dirNext.y === 0)
   ) {
     return { img: images.body.bottomright, dirPrev, dirNext, rotation: turnRotation };
   }
