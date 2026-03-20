@@ -10,7 +10,7 @@ export class Snake {
     // segments are stored in grid units
     this.segments = [{ x: startPos.x, y: startPos.y }];
     this.direction = { x: 1, y: 0 };
-    this.speed = 60;
+    this.speed = 15;
     this.frame = 0;
 
     // number of extra pieces to add (growth) when eating food
